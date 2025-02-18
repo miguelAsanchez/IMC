@@ -2,12 +2,19 @@
 <body>
 <h2>DESAFIO 1 INDECE DE MASA CORPORAL </h2>
 
-
+<div id="respuesta"></div>
 
 <script>
 function calcularIMC() {
-    let peso = prompt("Ingresa tu peso en kilogramos:");
-    let altura = prompt("Ingresa tu altura en metros:");
+   let peso = parseFloat(prompt("Ingresa tu peso en kilogramos:"));
+    let altura = parseFloat(prompt("Ingresa tu altura en metros:"));
+    // Fórmula para calcular el IMC: peso / (altura * altura)
+    
+    if(isNaN(peso)||isNaN(altura)||peso<=0||altura<=0){
+     document.getElementById("respuesta").innerHTML = "<p style='color: red;'>Debes ingresar números válidos mayores a 0.</p>";
+    
+    return;
+    }
 
     // Fórmula para calcular el IMC: peso / (altura * altura)
     let imc = peso / (altura * altura); 
